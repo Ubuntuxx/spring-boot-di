@@ -5,12 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title th:text="${titulo}"></title>
+    <style>
+        .email {
+            color: #282f44;
+            font-weight: 700;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        }
+    </style>
 </head>
 <body>
     <h1 th:text="${titulo}"></h1>
     <span th:text="${usuario.nombre}"></span>
     <span th:text="${usuario.apellido}"></span><br>
-    <span th:if="${usuario.email}" th:text="${usuario.email}"></span>
+    <span class="email" th:if="${usuario.email}" th:text="${usuario.email}"></span>
     <span th:if="${usuario.email == null}" th:text="'correo vacio'"></span>
+
+
+
 </body>
 </html>
