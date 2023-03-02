@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/params")
 public class EjemploParamsController {
     @GetMapping("/string")
-    public String EjemploParamsController(@RequestParam String texto, Model model) {
+    public String EjemploParamsController(@RequestParam(name = "texto", required = false) String texto, Model model) {
         model.addAttribute("resultado", "El parametro enviado es: " + texto);
         return "params/ver";
     }

@@ -3,15 +3,11 @@ package com.bolsadeideas.springboot.web.app.controller;
 import com.bolsadeideas.springboot.web.app.models.Usuario;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
-import java.util.UUID;
 
 @Controller
 @RequestMapping("/model")
@@ -41,8 +37,14 @@ public class IndexController {
         lista.add(new Usuario("Andres","Lopez","correo@correo.com"));
         lista.add(new Usuario("Andres","Lopez","correo@correo.com"));
         model.addAttribute("titulo", "Listado de usuarios");
-        //model.addAttribute("usuarios", lista);
+        model.addAttribute("usuarios", lista);
         return "listar";
+    }
+
+    @RequestMapping(value = "/foos", method = RequestMethod.GET)
+    @ResponseBody
+    public String getFoosBySimplePath() {
+        return "Get some Foos";
     }
 
     @ModelAttribute("usuarios")
