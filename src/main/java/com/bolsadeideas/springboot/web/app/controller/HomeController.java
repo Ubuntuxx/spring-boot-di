@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class HomeController {
     @GetMapping("/")
     public String index(Model model){
-        return "redirect:https://www.google.com";
+        return "redirect:/model/index";
     }
 }
